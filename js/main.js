@@ -84,6 +84,7 @@ function renderContactLinks(profile) {
   const links = [];
   if (socials.github) links.push({ label: "GitHub", url: socials.github, target: true });
   if (socials.youtube) links.push({ label: "YouTube", url: socials.youtube, target: true });
+  if (socials.facebook) links.push({ label: "Facebook", url: socials.facebook, target: true });
   if (socials.discord) links.push({ label: "Discord: @" + socials.discord, url: "#servers", isDiscordTag: true });
   
   // Sync Discord server invites into contact links
