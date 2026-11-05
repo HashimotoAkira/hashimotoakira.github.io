@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c13">
+  <meta name="description" content="Akira Hashimoto — Personal profile, Discord communities, projects and contact links.">
+  <meta property="og:title" content="Akira Hashimoto — Bio & Space">
+  <meta property="og:description" content="Personal space of Akira Hashimoto.">
+  <meta property="og:type" content="website">
+  <title>Akira Hashimoto — Bio & Space</title>
+  
+  <!-- Favicon links from original set -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Ambient & Anime Wallpaper Background -->
+  <div class="bg-fixed"></div>
+  <div class="bg-photo"></div>
+  <div class="bg-scrim"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+  <div class="grain"></div>
+
+  <!-- Topbar Header -->
+  <header class="topbar glass">
+    <a class="brand" href="#home" aria-label="Home">
+      <span class="brand-mark">✦</span><span data-profile="brand">AKIRA HASHIMOTO</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home" data-i18n="navHome">Home</a>
+      <a class="nav-link" href="#about" data-i18n="navAbout">About</a>
+      <a class="nav-link" href="#servers" data-i18n="navServers">Discord Servers</a>
+      <a class="nav-link" href="#projects" data-i18n="navProjects">Git</a>
+      <a class="nav-link" href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <button class="icon-button menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <button class="icon-button" id="langToggle" aria-label="Switch language">
+      <svg id="flagVN" class="lang-flag" viewBox="0 0 30 20" style="display:none"><rect width="30" height="20" fill="#DA251D" rx="2"/><polygon points="15,3.5 16.7,9.1 22.5,9.1 17.9,12.5 19.5,18 15,14.8 10.5,18 12.1,12.5 7.5,9.1 13.3,9.1" fill="#FFFF00"/></svg>
+      <svg id="flagGB" class="lang-flag" viewBox="0 0 30 20" style="display:none"><rect width="30" height="20" fill="#012169" rx="2"/><path d="M0,0 L30,20 M30,0 L0,20" stroke="#fff" stroke-width="3"/><path d="M0,0 L30,20 M30,0 L0,20" stroke="#C8102E" stroke-width="1.5"/><path d="M15,0 V20 M0,10 H30" stroke="#fff" stroke-width="5"/><path d="M15,0 V20 M0,10 H30" stroke="#C8102E" stroke-width="3"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="status-dot"></span><span data-profile="status">ONLINE &amp; CREATING</span>
+        </div>
+        <p class="kicker">HELLO, WORLD. I'M</p>
+        <h1><span class="name-gradient" data-profile="name">Akira Hashimoto</span><span class="accent">.</span></h1>
+        <p class="role" data-profile="role">Creator · Community Mod &amp; Supporter · Gamer</p>
+        <p class="intro" data-profile="intro">Welcome to my quiet corner on the web. Here you'll find my public projects, Discord communities, and ways to get in touch.</p>
+        
+        <div class="hero-actions">
+          <a class="button primary" href="#servers">Explore Communities <span>↓</span></a>
+          <a class="button secondary" href="#projects">My Projects <span>↗</span></a>
+        </div>
+
+        <!-- Quick Links (from old set) -->
+        <div class="quick-links" data-i18n="quickLinksAria" aria-label="Social media quick links">
+          <a class="tile" href="https://www.facebook.com/profile.php?id=61595172149308" target="_blank" rel="noopener" title="Facebook">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.58v1.87h2.78l-.44 2.91h-2.34V22C18.34 21.2 22 17.06 22 12.06Z"/></svg>
+            </span>
+            <span class="tile-label">Facebook</span>
+          </a>
+
+          <a class="tile" href="https://github.com/HashimotoAkira" target="_blank" rel="noopener" title="GitHub Profile">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.58 2 12.21c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.61-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.21C22 6.58 17.52 2 12 2Z"/></svg>
+            </span>
+            <span class="tile-label">GitHub</span>
+          </a>
+
+          <a class="tile" href="https://www.youtube.com/@Akira-Hashimoto-3.141" target="_blank" rel="noopener" title="YouTube Channel">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M23.5 6.19a2.99 2.99 0 0 0-2.11-2.12C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.39.57A2.99 2.99 0 0 0 .5 6.19 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.81 2.99 2.99 0 0 0 2.11 2.12C4.5 20.5 12 20.5 12 20.5s7.5 0 9.39-.57a2.99 2.99 0 0 0 2.11-2.12A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.81ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+            </span>
+            <span class="tile-label">YouTube</span>
+          </a>
+
+          <div class="tile" id="discordTile" title="Click to copy: mia.hashimoto" data-username="mia.hashimoto">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            </span>
+            <span class="tile-label" id="discordLabel">Discord</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual with Akira's Conic Avatar -->
+      <aside class="hero-visual">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="art-card glass">
+          <div class="art-topline">
+            <span>PERSONAL ARCHIVE</span>
+            <span class="mono">NO. 001</span>
+          </div>
+          <div class="art-window">
+            <div class="avatar-wrap">
+              <img class="avatar" src="assets/avatar.png" alt="Akira Hashimoto" onerror="this.style.display='none'">
+            </div>
+            <div class="art-caption">
+              <span class="mono">EST. IN CURIOSITY</span>
+              <strong data-profile="name">Akira Hashimoto</strong>
+            </div>
+          </div>
+          <div class="art-footer">
+            <span class="tiny-dot"></span>
+            <span data-profile="tagline">A quiet corner of the internet</span>
+            <span class="mono">V.02</span>
+          </div>
+        </div>
+        <div class="floating-chip chip-one glass">
+          <span>⌘</span> <span>Fluent Acrylic</span>
+        </div>
+        <div class="floating-chip chip-two glass">
+          <span>✦</span> <span>Anime &amp; Gaming</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">A LITTLE INTRODUCTION</p>
+          <h2>About <span class="accent">me</span></h2>
+        </div>
+        <span class="section-index mono">01 / ABOUT</span>
+      </div>
+      <div class="about-grid">
+        <article class="glass panel about-main">
+          <div class="panel-label"><span class="tiny-dot"></span> THE PERSON BEHIND THE SCREEN</div>
+          <h3 data-profile="headline">A creator with a soft spot for anime &amp; aesthetics.</h3>
+          <p data-i18n="aboutParagraph"></p>
+          <div class="interest-list" id="interests"></div>
+        </article>
+        <article class="glass panel skills-panel">
+          <div class="panel-label">CURRENT TOOLKIT</div>
+          <h3>Things I work with</h3>
+          <div class="skill-list" id="skills"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Discord Communities Section (from old set) -->
+    <section class="section discord-section" id="servers">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">COMMUNITY &amp; GUILDS</p>
+          <h2>Discord <span class="accent">Servers</span></h2>
+        </div>
+        <span class="section-index mono">02 / DISCORD</span>
+      </div>
+      <div class="project-intro">
+        <p data-i18n="discordIntro"></p>
+        <span class="mono">CLICK FOR LIVE WIDGET</span>
+      </div>
+      <ul class="server-list" id="serverList">
+        <!-- Rendered dynamically by JS -->
+      </ul>
+    </section>
+
+    <!-- Projects / Git Section -->
+    <section class="section projects-section" id="projects">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">SELECTED REPOSITORIES</p>
+          <h2>My <span class="accent">Git</span></h2>
+        </div>
+        <a class="text-link" id="githubProfileLink" href="https://github.com/HashimotoAkira" target="_blank" rel="noreferrer">View GitHub profile ↗</a>
+      </div>
+      <div class="project-intro">
+        <p data-i18n="projectsIntro"></p>
+        <span class="mono" id="repoStatus">GITHUB / PUBLIC REPOSITORIES</span>
+      </div>
+      <div class="project-grid" id="projectsGrid">
+        <div class="glass project-card skeleton"></div>
+        <div class="glass project-card skeleton"></div>
+        <div class="glass project-card skeleton"></div>
+      </div>
+      <p class="api-note" id="apiNote">Public repositories are loaded from GitHub when online.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="contact-card glass">
+        <div class="contact-orb"></div>
+        <p class="kicker">HAVE SOMETHING IN MIND?</p>
+        <h2>Let's make<br><span class="accent">something cool.</span></h2>
+        <p class="contact-copy" data-i18n="contactCopy">Connect with me via Discord or the social media channels below.</p>
+        <div class="contact-actions">
+          <button class="button primary" id="copyDiscordBtn" data-i18n="copyDiscordBtn">Copy Discord Tag 📋</button>
+          <a class="button secondary" href="https://github.com/HashimotoAkira" target="_blank" rel="noreferrer" data-i18n="visitGitHubBtn">Visit GitHub ↗</a>
+        </div>
+        <div class="contact-links" id="contactLinks"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Discord Server Live Widget Modal (from old set) -->
+  <div class="modal-overlay" id="server-modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="modalServerName">Discord Server</h3>
+      <div class="modal-body">
+        <div class="widget-container">
+          <iframe id="modalWidgetIframe" src="about:blank" title="Discord Server Widget" allowtransparency="true" frameborder="0"></iframe>
+        </div>
+        <a id="modalInviteLink" href="#" class="button primary modal-invite-btn" target="_blank" rel="noopener">
+          Join Server ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© <span id="year"></span> <span data-profile="name">Akira Hashimoto</span></span>
+    <span>Fluent Acrylic &amp; Anime Aesthetics</span>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

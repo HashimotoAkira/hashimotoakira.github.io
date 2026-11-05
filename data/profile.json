@@ -1,0 +1,64 @@
+{
+  "brand": "AKIRA HASHIMOTO",
+  "siteTitle": "Bio & Personal Space",
+  "name": "Akira Hashimoto",
+  "role": "Creator · Community Mod & Supporter · Gamer",
+  "status": "ONLINE & CREATING",
+  "intro": "Welcome to my quiet corner on the web. Here you'll find my public projects, Discord communities, and ways to get in touch.",
+  "tagline": "A quiet corner of the internet",
+  "headline": "A creator with a soft spot for anime & aesthetics.",
+  "bio": "Xin chào! Mình là Akira Hashimoto. Mình yêu thích anime, gaming, thiết kế giao diện Fluent và khám phá công nghệ mới. Nơi đây lưu trữ các dự án mã nguồn mở, cộng đồng Discord mình đang đồng hành và kênh liên hệ.",
+  "metaDescription": "Akira Hashimoto — Personal profile, Discord communities, projects and contact links.",
+  "email": "",
+  "githubUsername": "HashimotoAkira",
+  "repoLimit": 6,
+  "socials": {
+    "github": "https://github.com/HashimotoAkira",
+    "youtube": "https://www.youtube.com/@Akira-Hashimoto-3.141",
+    "discord": "mia.hashimoto",
+    "discordInvites": [
+      {
+        "name": "Vtuber Collaboration",
+        "url": "https://discord.gg/CdHQQvGW8N"
+      },
+      {
+        "name": "Nikke VN",
+        "url": "https://discord.gg/ayYkadVfmU"
+      }
+    ],
+    "facebook": "https://www.facebook.com/profile.php?id=61595172149308"
+  },
+  "interests": [
+    "Anime & Manga",
+    "Fluent Acrylic UI",
+    "Discord Communities",
+    "Vtuber Collaboration",
+    "Nikke: Goddess of Victory",
+    "Web Experiments"
+  ],
+  "skills": [
+    "Community Management",
+    "HTML & Fluent CSS",
+    "JavaScript",
+    "Discord Architecture",
+    "Git & GitHub"
+  ],
+  "discordServers": [
+    {
+      "name": "Vtuber Collaboration",
+      "role": "Supporter",
+      "badgeClass": "badge-supporter",
+      "status": "public",
+      "widgetUrl": "https://discord.com/widget?id=1480437880487936142&theme=dark",
+      "inviteUrl": "https://discord.gg/CdHQQvGW8N"
+    },
+    {
+      "name": "Nikke VN",
+      "role": "Admin",
+      "badgeClass": "badge-admin",
+      "status": "public",
+      "widgetUrl": "https://discord.com/widget?id=1466279689927655517&theme=dark",
+      "inviteUrl": "https://discord.gg/ayYkadVfmU"
+    }
+  ]
+}

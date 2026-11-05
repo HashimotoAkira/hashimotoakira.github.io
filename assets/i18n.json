@@ -1,0 +1,31 @@
+{
+  "en": {
+    "navHome": "Home",
+    "navAbout": "About",
+    "navServers": "Discord Servers",
+    "navProjects": "Git",
+    "navContact": "Contact",
+    "quickLinksAria": "Social quick links",
+    "aboutParagraph": "Hello! I’m Akira Hashimoto. I love anime, gaming, Fluent UI design, and exploring new technologies. This site hosts my open‑source projects, the Discord communities I’m part of, and ways to get in touch.",
+    "discordIntro": "Discord servers I manage, support, and chat in.",
+    "projectsIntro": "Projects, tools, and open‑source code pulled directly from GitHub.",
+    "contactCopy": "Connect with me via Discord or the social channels below.",
+    "copyDiscordBtn": "Copy Discord Tag 📋",
+    "visitGitHubBtn": "Visit GitHub ↗"
+  },
+  "vi": {
+    "navHome": "Trang chủ",
+    "navAbout": "Giới thiệu",
+    "navServers": "Discord Servers",
+    "navProjects": "Git",
+    "navContact": "Contact",
+    "quickLinksAria": "Liên kết nhanh mạng xã hội",
+    "aboutParagraph": "Xin chào! Mình là Akira Hashimoto. Mình yêu thích anime, gaming, thiết kế giao diện Fluent và khám phá công nghệ mới. Nơi đây lưu trữ các dự án mã nguồn mở, cộng đồng Discord mình đang đồng hành và kênh liên hệ.",
+    "discordIntro": "Các máy chủ Discord mình đang tham gia quản trị, hỗ trợ và giao lưu.",
+    "projectsIntro": "Các dự án, công cụ và mã nguồn mở được tải trực tiếp từ GitHub.",
+    "contactCopy": "Kết nối với mình qua Discord hoặc các kênh mạng xã hội bên dưới.",
+    "copyDiscordBtn": "Copy Discord Tag 📋",
+    "visitGitHubBtn": "Visit GitHub ↗"
+  }
+}
+
