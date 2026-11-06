@@ -477,11 +477,13 @@ h2 {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 400px));
+  justify-content: start;
   gap: 14px;
 }
 .server-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -502,6 +504,7 @@ h2 {
 }
 .server-info {
   display: flex;
+  flex: 1 1 260px;
   align-items: center;
   gap: 10px;
   min-width: 0;
@@ -509,9 +512,7 @@ h2 {
 .server-name {
   font-size: .95rem;
   font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
 }
 .badge {
   font-size: 10px;
@@ -546,8 +547,13 @@ h2 {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex: 1 1 100%;
   flex-shrink: 0;
   z-index: 2;
+}
+.server-actions .invite-btn {
+  flex: 1;
+  justify-content: center;
 }
 .invite-btn {
   font-family: 'DM Mono', monospace;
@@ -843,7 +849,6 @@ h2 {
   .hero-visual { min-height: 400px; }
   .about-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
-  .server-list { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
