@@ -1,4 +1,22 @@
 const PROFILE_URL = "data/profile.json";
+const REPOSITORY_LANGUAGE_LABELS = {
+  en: {
+    title: "Languages",
+    more: count => `+${count} more`,
+    less: "Show less",
+    loading: "Loading language data...",
+    empty: "No language data available.",
+    unavailable: "Language data unavailable."
+  },
+  vi: {
+    title: "Ngôn ngữ",
+    more: count => `+${count} ngôn ngữ`,
+    less: "Thu gọn",
+    loading: "Đang tải dữ liệu ngôn ngữ...",
+    empty: "Không có dữ liệu ngôn ngữ.",
+    unavailable: "Không thể tải dữ liệu ngôn ngữ."
+  }
+};
 
 async function loadProfile() {
   const response = await fetch(PROFILE_URL);
@@ -127,19 +145,32 @@ async function loadRepositories(username, limit = 6) {
     if (!repos.length) throw new Error("No public repositories found.");
 
     grid.innerHTML = repos.map((repo, index) => `
-      <a class="glass project-card" href="${escapeAttr(repo.html_url)}" target="_blank" rel="noreferrer">
+      <article class="glass project-card">
         <div class="project-top">
           <span>REPOSITORY / 0${index + 1}</span>
-          <span class="project-icon">↗</span>
+          <a class="project-icon" href="${escapeAttr(repo.html_url)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeAttr(repo.name)} on GitHub">↗</a>
         </div>
-        <h3>${escapeHtml(repo.name)}</h3>
+        <a class="project-title-link" href="${escapeAttr(repo.html_url)}" target="_blank" rel="noreferrer">
+          <h3>${escapeHtml(repo.name)}</h3>
+        </a>
         <p>${escapeHtml(repo.description || "A project from my GitHub workspace.")}</p>
+        <div class="language-breakdown" data-languages-url="${escapeAttr(repo.languages_url || "")}">
+          <p class="language-heading"></p>
+          <div class="language-list language-primary" aria-live="polite"></div>
+          <details class="project-languages" hidden>
+            <summary>
+              <span class="language-more-label"></span>
+              <span class="language-less-label"></span>
+            </summary>
+            <div class="language-list language-extra"></div>
+          </details>
+        </div>
         <div class="project-meta">
-          <span>${escapeHtml(repo.language || "CODE")}</span>
           <span>★ ${repo.stargazers_count} &nbsp;⑂ ${repo.forks_count}</span>
         </div>
-      </a>
+      </article>
     `).join("");
+    setupRepositoryLanguages();
     if (note) note.textContent = `Showing ${repos.length} latest public repositories from GitHub.`;
   } catch (error) {
     grid.innerHTML = `
@@ -155,6 +186,91 @@ async function loadRepositories(username, limit = 6) {
     `;
     if (note) note.textContent = "Could not load automatically due to GitHub's unauthenticated API rate limit.";
   }
+}
+
+function setupRepositoryLanguages() {
+  updateRepositoryLanguageLabels();
+  document.querySelectorAll(".language-breakdown").forEach(breakdown => {
+    const details = breakdown.querySelector(".project-languages");
+    const primaryList = breakdown.querySelector(".language-primary");
+    if (details) {
+      details.addEventListener("toggle", () => updateRepositoryLanguageLabels());
+    }
+
+    loadRepositoryLanguages(breakdown, primaryList, details);
+  });
+}
+
+function updateRepositoryLanguageLabels(lang = document.documentElement.lang) {
+  const labels = REPOSITORY_LANGUAGE_LABELS[lang] || REPOSITORY_LANGUAGE_LABELS.en;
+  document.querySelectorAll(".language-breakdown").forEach(breakdown => {
+    const heading = breakdown.querySelector(".language-heading");
+    const details = breakdown.querySelector(".project-languages");
+    const moreLabel = breakdown.querySelector(".language-more-label");
+    const lessLabel = breakdown.querySelector(".language-less-label");
+    if (heading) heading.textContent = labels.title;
+    if (moreLabel && details) {
+      const count = Number(details.dataset.extraCount || 0);
+      moreLabel.textContent = labels.more(count);
+    }
+    if (lessLabel) lessLabel.textContent = labels.less;
+  });
+}
+
+document.addEventListener("site-language-change", event => {
+  updateRepositoryLanguageLabels(event.detail.lang);
+});
+
+async function loadRepositoryLanguages(breakdown, primaryList, details) {
+  if (!primaryList || !details || !breakdown.dataset.languagesUrl) {
+    if (primaryList) primaryList.textContent = getRepositoryLanguageLabels().unavailable;
+    return;
+  }
+
+  primaryList.textContent = getRepositoryLanguageLabels().loading;
+  try {
+    const response = await fetch(breakdown.dataset.languagesUrl);
+    if (!response.ok) throw new Error(`GitHub languages API returned status ${response.status}`);
+    const languages = await response.json();
+    const entries = Object.entries(languages)
+      .filter(([, bytes]) => typeof bytes === "number" && bytes > 0)
+      .sort((a, b) => b[1] - a[1]);
+    const totalBytes = entries.reduce((total, [, bytes]) => total + bytes, 0);
+
+    if (!entries.length || totalBytes === 0) {
+      primaryList.textContent = getRepositoryLanguageLabels().empty;
+      return;
+    }
+
+    primaryList.innerHTML = renderLanguageRows(entries.slice(0, 3), totalBytes);
+    const extraEntries = entries.slice(3);
+    if (extraEntries.length) {
+      details.dataset.extraCount = String(extraEntries.length);
+      details.querySelector(".language-extra").innerHTML = renderLanguageRows(extraEntries, totalBytes);
+      details.hidden = false;
+      updateRepositoryLanguageLabels();
+    }
+  } catch (error) {
+    console.error("Could not load repository languages:", error);
+    primaryList.textContent = getRepositoryLanguageLabels().unavailable;
+  }
+}
+
+function getRepositoryLanguageLabels() {
+  return REPOSITORY_LANGUAGE_LABELS[document.documentElement.lang] || REPOSITORY_LANGUAGE_LABELS.en;
+}
+
+function renderLanguageRows(entries, totalBytes) {
+  return entries.map(([name, bytes]) => {
+    const percentage = bytes / totalBytes * 100;
+    return `
+      <div class="language-row">
+        <span>${escapeHtml(name)}</span>
+        <span>${Math.round(percentage)}%</span>
+        <span class="language-meter" aria-hidden="true"><span style="width:${percentage}%"></span></span>
+      </div>
+    `;
+  }).join("");
 }
 
 function escapeHtml(value) {

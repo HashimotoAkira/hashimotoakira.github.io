@@ -37,7 +37,14 @@
         el.textContent = dict[lang][key];
       }
     });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.dataset.i18nAria;
+      if (dict[lang] && dict[lang][key]) {
+        el.setAttribute('aria-label', dict[lang][key]);
+      }
+    });
     updateFlag(lang);
+    document.dispatchEvent(new CustomEvent('site-language-change', { detail: { lang } }));
   }
 
   // Apply on load
