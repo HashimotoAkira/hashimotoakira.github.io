@@ -390,11 +390,6 @@ h1 span.name-gradient {
   justify-content: center;
   box-shadow: 0 0 35px rgba(155, 123, 255, 0.45);
   margin-bottom: 16px;
-  animation: subtle-pulse 6s ease-in-out infinite alternate;
-}
-@keyframes subtle-pulse {
-  from { transform: scale(1); filter: drop-shadow(0 0 15px rgba(155, 123, 255, 0.4)); }
-  to { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(255, 134, 184, 0.5)); }
 }
 .avatar {
   width: 100%;
